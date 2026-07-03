@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/main.css">
+  <title>Document</title>
+</head>
+<body>
+      <header>
+  <nav class="navbar">
+    <a href="#" class="logo">Martin n'oublie pas de pull zebi tu abuz</a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a href="#" class="nav-button">Sign Up</a>
+    </div>
+  </nav>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+
+      menuButton.classList.toggle("open", isOpen);
+      menuButton.setAttribute("aria-expanded", isOpen);
+    });
+
+    document.querySelectorAll(".nav-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        menuButton.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+</header>
+  <main>
+    <h1>Ceci est une page contact</h1>
+  </main>
+  <!--=========================-->
+<!--=========Footer==========-->
+<!--=========================-->
+<footer class="footer container">
+  <p class="footer__intro">Collaborer ou entrer en contact</p>
+
+  <h2 class="footer__email">
+    <a href="mailto:martinvervaeren@gmail.com">martinvervaeren@gmail.com</a>
+  </h2>
+
+  <div class="footer__columns">
+    <div class="footer__col footer__col--legal">
+      <span class="footer__label">Mentions légales</span>
+      <p>Voldemort Aggin</p>
+      <p><a href="tel:+32476016924">+32 499 11 66 54</a></p>
+      <p>BE** **** ****</p>
+      <p>Rue Léon Lefèvre, 40</p>
+      <p>5020, Namur</p>
+    </div>
+
+    <div class="footer__col">
+      <span class="footer__label">Naviguer</span>
+      <a href="#services">Services</a>
+      <a href="#about">À propos</a>
+      <a href="#contact">Contact</a>
+      <a href="#CGV">CGV</a>
+      <a href="#CGU">CGU</a>
+      <a href="#cookies">Politique des cookies</a>
+    </div>
+
+    <div class="footer__col">
+      <span class="footer__label">Suivez-moi</span>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>&copy; 2026 INGRWI36. Tous droits réservés.</p>
+    <p>Design &amp; Développement by Kosma Chevalier</p>
+  </div>
+</footer>
+</html>
