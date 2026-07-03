@@ -1,1 +1,66 @@
-/* TODO _hero.scss */
+.hero {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff00ff,
+    #ff00ff 10px,
+    #00ff00 10px,
+    #00ff00 20px,
+    #ffff00 20px,
+    #ffff00 30px
+  );
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transform: rotate(-2deg);
+  border: 12px dashed #ff0066;
+  box-shadow: 0 0 40px 10px #00ffff inset;
+}
+
+.hero h2 {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 4rem;
+  color: #ff0000;
+  text-shadow:
+    3px 3px 0 #00ff00,
+    -3px -3px 0 #0000ff,
+    6px 6px 0 #ffff00;
+  transform: rotate(6deg) skewX(-10deg);
+  margin-left: 5%;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-family: "Papyrus", fantasy;
+  background-color: #39ff14;
+  color: #ff00ff;
+  padding: 10px 25px;
+  transform: rotate(-8deg);
+  margin-top: -10px;
+  margin-right: 20%;
+  border: 5px solid orange;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.hero .btn {
+  background: radial-gradient(circle, #ffff00, #ff6600);
+  color: #0000ff;
+  font-family: "Impact", sans-serif;
+  font-size: 1.8rem;
+  padding: 25px 50px;
+  border: 6px ridge #00ff00;
+  border-radius: 50% 20% 40% 10%;
+  transform: rotate(15deg) translateY(30px);
+  margin-top: 40px;
+  align-self: center;
+  text-decoration: underline wavy #ff00ff;
+  box-shadow: 10px 10px 0 #000000, -10px -10px 0 #ff0000;
+}
+
+.hero .btn:hover {
+  background: #00ff00;
+  color: #ff00ff;
+  transform: rotate(-15deg) scale(1.3);
+}

@@ -1,1 +1,149 @@
-/* TODO _footer.scss */
+//reset
+:where(*) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+//layout
+// ==========================
+// ========= Footer =========
+// ==========================
+
+// Palette "crayon" façon 90s
+$color-bg: #ffffff;
+$color-pink: #ff5fa2;
+$color-purple: #9b59d0;
+$color-teal: #2ec4b6;
+$color-yellow: #ffe066;
+$color-orange: #ff9f45;
+$color-blue: #4d6bff;
+$color-green: #4caf50;
+$color-text: #222222;
+$color-link: #2222cc; // bleu lien "vieille école"
+$color-link-visited: #7a2ea8;
+
+$font-display: "Comic Sans MS", "Chalkboard SE", "Marker Felt", cursive;
+$font-body: "Comic Sans MS", "Trebuchet MS", sans-serif;
+
+@mixin crayon-divider {
+  height: 10px;
+  border: none;
+  background: repeating-linear-gradient(
+    90deg,
+    $color-purple 0 20px,
+    $color-teal 20px 40px,
+    $color-pink 40px 60px,
+    $color-orange 60px 80px,
+    $color-yellow 80px 100px,
+    $color-blue 100px 120px,
+    $color-green 120px 140px
+  );
+  border-radius: 999px;
+  margin: 32px 0;
+}
+
+.footer {
+  background: $color-bg;
+  font-family: $font-body;
+  color: $color-text;
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 10px dashed $color-purple;
+
+  &__intro {
+    font-family: $font-display;
+    font-size: 18px;
+    color: $color-purple;
+    margin-bottom: 8px;
+  }
+
+  &__email {
+    font-family: $font-display;
+    font-weight: bold;
+    font-size: clamp(24px, 5vw, 42px);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+
+    a {
+      text-decoration: none;
+      background: linear-gradient(
+        90deg,
+        $color-pink,
+        $color-orange,
+        $color-yellow,
+        $color-green,
+        $color-blue,
+        $color-purple
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.08);
+
+      &:hover {
+        filter: brightness(1.15);
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    @include crayon-divider;
+  }
+
+  &__columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+    margin: 32px 0;
+    text-align: left;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 200px;
+
+    &--legal {
+      text-align: left;
+    }
+
+    p,
+    a {
+      font-size: 15px;
+      color: $color-text;
+      text-decoration: none;
+    }
+
+    a {
+      color: $color-link;
+      text-decoration: underline dotted;
+      text-underline-offset: 3px;
+
+      &:visited {
+        color: $color-link-visited;
+      }
+
+      &:hover {
+        color: $color-pink;
+        text-decoration-style: wavy;
+      }
+    }
+  }
+
+  &__label {
+    font-family: $font-display;
+    font-weight: bold;
+    font-size: 14px;
+    color: $color-teal;
+    text-transform: uppercase;
+  }
+}
