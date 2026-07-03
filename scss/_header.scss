@@ -1,5 +1,5 @@
 //reset
-$primary: #08ffe6;
+
 
 
 
@@ -69,8 +69,8 @@ body {
 }
 
 .nav-button:hover {
-  color: white;
-  background: $primary;
+  color: $primary;
+  background: $complementery;
 }
 
 /* Hamburger button */
