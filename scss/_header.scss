@@ -1,3 +1,9 @@
+//reset
+$primary: #08ffe6;
+
+
+
+//layout
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +23,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1d3557;
+  background: rgb(8, 7, 23);
 }
 
 .logo {
@@ -49,13 +55,13 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #4cc9f0;
+  color: #ff0000;
 }
 
 .nav-button {
   padding: 10px 20px;
   border-radius: 6px;
-  color: #1d3557;
+  color: #f70cff;
   background: white;
   font-weight: bold;
   text-decoration: none;
@@ -64,7 +70,7 @@ body {
 
 .nav-button:hover {
   color: white;
-  background: #4cc9f0;
+  background: $primary;
 }
 
 /* Hamburger button */
@@ -84,7 +90,7 @@ body {
   height: 3px;
   margin: 6px auto;
   border-radius: 3px;
-  background: white;
+  background: $primary;
   transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -104,7 +110,7 @@ body {
     display: none;
     flex-direction: column;
     gap: 25px;
-    background: #1d3557;
+    background: $primary;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   }
 
