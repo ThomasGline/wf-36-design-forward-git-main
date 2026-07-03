@@ -1,7 +1,70 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Design Forward</title><link rel="stylesheet" href="css/main.css"></head><body>
-<header class="header"><div class="container"><h1>Design Forward 2026</h1><nav><a href="#">Accueil</a><a href="#">Programme</a><a href="#">Speakers</a><a href="#">Contact</a></nav></div></header>
-<section class="hero container"><h2>Le festival UX/UI</h2><p>Une base de projet à compléter en équipe.</p><a class="btn" href="#">S'inscrire</a></section>
-<section class="cards container"><!-- TODO: ateliers --></section>
-<section class="program container"><!-- TODO: programme --></section>
-<footer class="footer container"><!-- TODO: footer --></footer>
-</body></html>
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Design Forward</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<header>
+  <nav class="navbar">
+    <a href="#" class="logo">Design Forward 2026</a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <a href="#" class="nav-button">Sign Up</a>
+    </div>
+  </nav>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+
+      menuButton.classList.toggle("open", isOpen);
+      menuButton.setAttribute("aria-expanded", isOpen);
+    });
+
+    document.querySelectorAll(".nav-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        menuButton.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+</header>
+    
+  <section class="hero container">
+    <h2>Le festival UX/UI</h2>
+    <p>Une base de projet à compléter en équipe.</p><a class="btn" href="#">S'inscrire</a>
+  </section>
+  <section class="cards container"><!-- TODO: ateliers --></section>
+  <section class="program container"><!-- TODO: programme --></section>
+  <footer class="footer container"><!-- TODO: footer --></footer>
+</body>
+
+</html>
